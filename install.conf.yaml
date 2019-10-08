@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.config/fish: ./src/config/fish
+    ~/.ssh: ./src/ssh
+    ~/.gitconfig: ./src/gitconfig
+    ~/.gitignore_global: ./src/gitignore_global
+
+    ~/update.sh: ./src/scripts/update.sh
+
+    ~/.ssh/id_rsa: ./secrets/id_rsa
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa && chmod 644 ~/.ssh/id_rsa.pub, Chmoding ssh keys]
+    - [ssh-add -K ~/.ssh/id_rsa, Adding ssh key to agent]
+    - [chmod +x ~/update.sh, Making scripts executable]
