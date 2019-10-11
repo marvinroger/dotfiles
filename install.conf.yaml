@@ -9,6 +9,7 @@
     ~/.ssh: ./src/ssh
     ~/.gitconfig: ./src/gitconfig
     ~/.gitignore_global: ./src/gitignore_global
+    ~/.profile: ./src/profile
 
     ~/update.sh: ./src/scripts/update.sh
 

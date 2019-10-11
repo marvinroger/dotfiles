@@ -5,5 +5,10 @@ if not functions -q fisher
     fish -c fisher
 end
 
+# Source ~/.profile if it exists
+if test -e ~/.profile
+    bass source ~/.profile
+end
+
 # Init starship
 eval (starship init fish)
