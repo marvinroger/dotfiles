@@ -49,6 +49,7 @@ brew cask install spotify
 brew cask install the-unarchiver
 brew cask install keybase
 brew cask install gpg-suite
+brew cask install notion
 
 # Install all needed brews
 brew install mas
