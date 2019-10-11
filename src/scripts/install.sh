@@ -48,12 +48,14 @@ brew cask install slack
 brew cask install spotify
 brew cask install the-unarchiver
 brew cask install keybase
+brew cask install gpg-suite
 
 # Install all needed brews
 brew install mas
 brew install fish
 brew install starship
 brew install shellcheck
+brew install gpg
 
 # Install all needed app store apps
 mas install 937984704 # amphetamine

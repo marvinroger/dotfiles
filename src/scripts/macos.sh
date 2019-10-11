@@ -47,6 +47,14 @@ defaults write com.apple.dock show-recents -bool false
 
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
+defaults write com.apple.systemuiserver menuExtras -array \
+	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -bool true
+
 # TODO... enhance, before buying a new mac!
 
 for app in "Dock" \
