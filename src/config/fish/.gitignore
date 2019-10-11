@@ -2,7 +2,9 @@
 !/functions/fish_greeting.fish
 !/functions/copy.fish
 !/functions/disable_gatekeeper.fish
+!/functions/github_clone.fish
 !/functions/loop.fish
+!/functions/pretty_log.fish
 !/functions/update.fish
 
 /conf.d/

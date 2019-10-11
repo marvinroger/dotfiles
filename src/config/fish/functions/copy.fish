@@ -1,6 +1,6 @@
-# Usage: copy <file>
+# Usage: copy <file>|<variable>
 
-function copy --description "Copy the contents of a text file or variable to your clipboard"
+function copy --description "Copy the content of a text file or variable to clipboard"
   set --local argc (count $argv)
   if test $argc -eq 1
     switch (uname)
@@ -18,6 +18,6 @@ function copy --description "Copy the contents of a text file or variable to you
         end
     end
   else
-    echo "Well this is embarrassing... I can only copy one file at a time."
+    pretty_log error "Please give the file or variable argument."
   end
 end

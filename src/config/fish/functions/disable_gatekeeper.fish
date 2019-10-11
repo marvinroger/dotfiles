@@ -5,6 +5,6 @@ function disable_gatekeeper --description "Disable Gatekeeper for an app"
   if test $argc -eq 1
     sudo xattr -rd com.apple.quarantine $argv[1]
   else
-    echo "Please give the app argument."
+    pretty_log error "Please give the app argument."
   end
 end
