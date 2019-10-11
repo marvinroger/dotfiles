@@ -1,6 +1,7 @@
 /functions/*
 !/functions/fish_greeting.fish
 !/functions/copy.fish
+!/functions/disable_gatekeeper.fish
 !/functions/loop.fish
 !/functions/update.fish
 
