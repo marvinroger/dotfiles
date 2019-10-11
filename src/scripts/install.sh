@@ -46,10 +46,10 @@ brew cask install iterm2
 brew cask install balenaetcher
 brew cask install slack
 brew cask install spotify
-brew cask install the-unarchiver
 brew cask install keybase
 brew cask install gpg-suite
 brew cask install notion
+brew cask install keka
 
 # Install all needed brews
 brew install mas
