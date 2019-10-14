@@ -47,7 +47,6 @@ brew cask install balenaetcher
 brew cask install slack
 brew cask install spotify
 brew cask install keybase
-brew cask install gpg-suite
 brew cask install notion
 brew cask install keka
 
@@ -56,7 +55,10 @@ brew install mas
 brew install fish
 brew install starship
 brew install shellcheck
-brew install gpg
+brew install wget
+brew install lsusb
+brew install gnupg
+brew install pinentry-mac
 
 # Install all needed app store apps
 mas install 937984704 # amphetamine
