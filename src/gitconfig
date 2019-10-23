@@ -1,7 +1,7 @@
 [user]
 	name = Marvin ROGER
 	email = dev@marvinroger.fr
-	signingkey = B364DB076345032C568E4CB21FE4538F0AD12E71
+	signingkey = 75F7B5202C07DA5E
 [core]
 	excludesfile = ~/.gitignore_global
 [gpg]
