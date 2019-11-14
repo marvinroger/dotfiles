@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 platform="unknown"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   platform="linux"
@@ -69,7 +71,7 @@ mas install 462058435 # excel
 
 # Change shell to fish
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-chsh -s `which fish`
+chsh -s "$(command -v fish)"
 
 # Set macOS config
-./macos.sh
+bash "$DIR/macos.sh"
