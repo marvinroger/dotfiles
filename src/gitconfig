@@ -1,6 +1,6 @@
 [user]
 	name = Marvin ROGER
-	email = dev@marvinroger.fr
+	email = bonjour+git@marvinroger.fr
 	signingkey = 75F7B5202C07DA5E
 [core]
 	excludesfile = ~/.gitignore_global
