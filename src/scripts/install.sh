@@ -61,6 +61,8 @@ brew install wget
 brew install lsusb
 brew install gnupg
 brew install pinentry-mac
+brew install node
+brew install yarn
 
 # Install all needed app store apps
 mas install 937984704 # amphetamine
