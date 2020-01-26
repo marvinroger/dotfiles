@@ -51,6 +51,8 @@ brew cask install spotify
 brew cask install keybase
 brew cask install notion
 brew cask install keka
+brew cask install vlc
+brew cask install postman
 
 # Install all needed brews
 brew install mas
@@ -70,6 +72,7 @@ mas install 441258766 # magnet
 mas install 462054704 # word
 mas install 462062816 # powerpoint
 mas install 462058435 # excel
+mas install 1176895641 # spark
 
 # Change shell to fish
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
