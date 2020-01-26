@@ -1,2 +1,5 @@
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Go
+export GOPATH="${HOME}/Dev/go"
