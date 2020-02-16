@@ -1,3 +1,5 @@
+PKCS11Provider /usr/local/lib/libykcs11_NOTALINK.dylib
+
 Host *
   AddKeysToAgent yes
   UseKeychain yes

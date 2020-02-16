@@ -7,6 +7,7 @@
 !/functions/pretty_log.fish
 !/functions/time_machine_exclude_deps.fish
 !/functions/update.fish
+!/functions/yubikey.fish
 
 /conf.d/
 /completions/

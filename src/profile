@@ -2,4 +2,4 @@
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Go
-export GOPATH="${HOME}/Dev/go"
+export GOPATH="${HOME}/Dev/go" 

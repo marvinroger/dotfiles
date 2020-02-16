@@ -12,7 +12,6 @@
     ~/.gitignore_global: ./src/gitignore_global
     ~/.profile: ./src/profile
     ~/Library/LaunchAgents/homebrew.gpg.gpg-agent.plist: ./src/mac/LaunchAgents/homebrew.gpg.gpg-agent.plist
-    ~/Library/LaunchAgents/link-ssh-auth-sock.plist: ./src/mac/LaunchAgents/link-ssh-auth-sock.plist
 
     ~/.ssh/id_rsa: ./secrets/id_rsa
 
@@ -22,4 +21,3 @@
     - [chmod 700 ~/.gnupg && chmod 600 ~/.gnupg/*, Chmoding gnupg]
     - [ssh-add -K ~/.ssh/id_rsa, Adding ssh key to agent]
     - [launchctl load -F ~/Library/LaunchAgents/homebrew.gpg.gpg-agent.plist, Load gpg-agent plist]
-    - [launchctl load -F ~/Library/LaunchAgents/link-ssh-auth-sock.plist, Load gpg-agent SSH_AUTH_SOCK override plist]

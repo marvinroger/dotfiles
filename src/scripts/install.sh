@@ -53,6 +53,8 @@ brew cask install notion
 brew cask install keka
 brew cask install vlc
 brew cask install postman
+brew cask install tunnelblick
+brew cask install nordvpn
 
 # Install all needed brews
 brew install mas
@@ -65,6 +67,7 @@ brew install gnupg
 brew install pinentry-mac
 brew install node
 brew install yarn
+brew install yubico-piv-tool
 
 # Install all needed app store apps
 mas install 937984704 # amphetamine
