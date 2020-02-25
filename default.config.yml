@@ -1,0 +1,60 @@
+---
+enable_dotfiles: yes
+enable_homebrew: yes
+enable_mas: yes
+enable_macos_defaults: yes
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_installed_packages:
+  - mas
+  - fish
+  - starship
+  - shellcheck
+  - wget
+  - lsusb
+  - gnupg
+  - pinentry-mac
+  - node
+  - yarn
+  - yubico-piv-tool
+
+homebrew_cask_apps:
+  - google-chrome
+  - visual-studio-code
+  - 1password
+  - iterm2
+  - balenaetcher
+  - slack
+  - spotify
+  - keybase
+  - notion
+  - keka
+  - vlc
+  - postman
+  - tunnelblick
+  - nordvpn
+  - prefs-editor
+
+mas_installed_apps:
+  - { id: 937984704, name: "Amphetamine" }
+  - { id: 441258766, name: "Magnet" }
+  - { id: 462054704, name: "Word" }
+  - { id: 462062816, name: "Powerpoint" }
+  - { id: 462058435, name: "Excel" }
+  - { id: 1176895641, name: "Spark" }
+# assume we're already logged in
+mas_email: ""
+mas_password: ""
+
+dotfiles:
+  - { dest: "~/.config/fish", src: "{{ playbook_dir }}/dotfiles/config/fish" }
+  - { dest: "~/.ssh", src: "{{ playbook_dir }}/dotfiles/ssh" }
+  - { dest: "~/.gnupg", src: "{{ playbook_dir }}/dotfiles/gnupg" }
+  - { dest: "~/.gitconfig", src: "{{ playbook_dir }}/dotfiles/gitconfig" }
+  - { dest: "~/.gitignore_global", src: "{{ playbook_dir }}/dotfiles/gitignore_global" }
+  - { dest: "~/.profile", src: "{{ playbook_dir }}/dotfiles/profile" }
+
+  - { dest: "~/.ssh/id_rsa", src: "{{ playbook_dir }}/secrets/id_rsa" }

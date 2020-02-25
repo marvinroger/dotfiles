@@ -1,0 +1,13 @@
+---
+- name: Chmod SSH and GPG data
+  file:
+    path: "{{ item.path }}"
+    mode: "{{ item.mode }}"
+  with_items:
+    - { path: "~/.ssh", mode: "700" }
+    - { path: "~/.ssh/id_rsa", mode: "600" }
+    - { path: "~/.ssh/id_rsa.pub", mode: "644" }
+    - { path: "~/.gnupg", mode: "700" }
+
+- name: Add SSH key to ssh-agent
+  command: ssh-add -K ~/.ssh/id_rsa

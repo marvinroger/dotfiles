@@ -1,0 +1,41 @@
+---
+- hosts: all
+  connection: local
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+    # Close any open System Preferences panes, to prevent them from overriding
+    # settings we’re about to change
+    - name: Close System Preferences
+      command: osascript -e 'tell application "System Preferences" to quit'
+
+
+  roles:
+    - role: geerlingguy.homebrew
+      when: enable_homebrew
+      tags: ['homebrew']
+    - role: geerlingguy.mas
+      when: enable_mas
+      tags: ['mas']
+
+  tasks:
+    - import_tasks: tasks/link_dotfiles.yml
+      when: enable_dotfiles
+    - import_tasks: tasks/ssh_gpg.yml
+      when: enable_dotfiles
+    - import_tasks: tasks/macos_defaults.yml
+      when: enable_macos_defaults
+    - import_tasks: tasks/shell.yml
+
+  handlers:
+    - name: Kill Dock
+      command: killall Dock
+
+    - name: Kill Finder
+      command: killall Finder
