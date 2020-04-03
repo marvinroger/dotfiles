@@ -37,6 +37,8 @@ homebrew_cask_apps:
   - tunnelblick
   - nordvpn
   - prefs-editor
+  - zoomus
+  - tresorit
 
 mas_installed_apps:
   - { id: 937984704, name: "Amphetamine" }
