@@ -1,0 +1,8 @@
+---
+# Workaround: SSH does not work with symbolic links
+# So we make a hard copy
+- name: Do a hard copy of libykcs11
+  copy:
+    src: /usr/local/lib/libykcs11.dylib
+    dest: /usr/local/lib/libykcs11_NOTALINK.dylib
+    follow: yes

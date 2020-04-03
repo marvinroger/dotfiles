@@ -28,10 +28,11 @@
     - import_tasks: tasks/link_dotfiles.yml
       when: enable_dotfiles
     - import_tasks: tasks/ssh_gpg.yml
-      when: enable_dotfiles
     - import_tasks: tasks/macos_defaults.yml
       when: enable_macos_defaults
     - import_tasks: tasks/shell.yml
+    - import_tasks: tasks/yubikey_workaround.yml
+    - import_tasks: tasks/fonts.yml
 
   handlers:
     - name: Kill Dock

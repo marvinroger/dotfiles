@@ -1,0 +1,7 @@
+---
+# Workaround: SSH does not work with symbolic links
+# So we make a hard copy
+- name: Install fonts
+  synchronize:
+    src: "{{ playbook_dir }}/assets/fonts"
+    dest: "~/Library/Fonts"
