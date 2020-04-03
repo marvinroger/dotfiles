@@ -1,4 +1,10 @@
 ---
+- name: Create ~/.config directory
+  file:
+    path: "~/.config"
+    state: directory
+    mode: '700'
+
 - name: Link dotfiles
   file:
     src: "{{ item.src }}"
