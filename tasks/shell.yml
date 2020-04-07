@@ -1,14 +1,14 @@
 ---
-- name: Check if homebrew fish is installed
-  stat: { path: "/usr/local/bin/fish" }
-  register: brew_fish
+- name: Check if homebrew zsh is installed
+  stat: { path: "/usr/local/bin/zsh" }
+  register: brew_zsh
 
-- name: Add homebrew fish to /etc/shells
-  lineinfile: { dest: "/etc/shells", line: "/usr/local/bin/fish", state: "present"}
+- name: Add homebrew zsh to /etc/shells
+  lineinfile: { dest: "/etc/shells", line: "/usr/local/bin/zsh", state: "present"}
   become: yes
-  when: brew_fish.stat.exists
+  when: brew_zsh.stat.exists
 
-- name: Set default shell to fish
-  user: { name: "{{ ansible_user_id }}", shell: "/usr/local/bin/fish" }
+- name: Set default shell to brew zsh
+  user: { name: "{{ ansible_user_id }}", shell: "/usr/local/bin/zsh" }
   become: yes
-  when: brew_fish.stat.exists
+  when: brew_zsh.stat.exists

@@ -1,0 +1,13 @@
+# Usage: yubikey <load|unload>
+# Load/unload YubiKey into ssh-agent
+
+function yubikey() {
+  case $1 in
+    load)
+      ssh-add -s /usr/local/lib/libykcs11_NOTALINK.dylib
+      ;;
+    unload)
+      ssh-add -e /usr/local/lib/libykcs11_NOTALINK.dylib
+      ;;
+  esac
+}

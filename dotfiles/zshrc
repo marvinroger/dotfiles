@@ -1,0 +1,28 @@
+fpath+=~/.zsh_functions
+autoload copy disable_gatekeeper github_clone pretty_log \
+time_machine_exclude_deps update yubikey
+
+# Use antigen from homebrew
+source /usr/local/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle z
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+# Must be last
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
+
+# Source ~/.profile if it exists
+if test -e "$HOME/.profile"; then
+    source "$HOME/.profile"
+fi
+
+# Source ~/.profile_override if it exists
+# .profile_override is not tracked in git
+if test -e "$HOME/.profile_override"; then
+    source "$HOME/.profile_override"
+fi
+
+# Init starship
+eval "$(starship init zsh)"

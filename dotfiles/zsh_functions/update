@@ -1,6 +1,7 @@
 # Usage: update
+# Update programs
 
-function update --description "Update programs"
+function update() {
   pretty_log info "Starting homebrew update..."
   brew update
   pretty_log info "Starting homebrew upgrade..."
@@ -12,4 +13,4 @@ function update --description "Update programs"
   pretty_log info "Starting Mac App Store upgrade..."
   mas upgrade
   pretty_log success "Done."
-end
+}

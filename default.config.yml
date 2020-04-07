@@ -10,16 +10,14 @@ homebrew_taps:
 
 homebrew_installed_packages:
   - mas
-  - fish
   - starship
   - shellcheck
   - wget
   - lsusb
   - gnupg
   - pinentry-mac
-  - node
-  - yarn
   - yubico-piv-tool
+  - zsh
 
 homebrew_cask_apps:
   - google-chrome
@@ -37,8 +35,6 @@ homebrew_cask_apps:
   - tunnelblick
   - nordvpn
   - prefs-editor
-  - zoomus
-  - tresorit
 
 mas_installed_apps:
   - { id: 937984704, name: "Amphetamine" }
@@ -52,7 +48,8 @@ mas_email: ""
 mas_password: ""
 
 dotfiles:
-  - { dest: "~/.config/fish", src: "{{ playbook_dir }}/dotfiles/config/fish" }
+  - { dest: "~/.zshrc", src: "{{ playbook_dir }}/dotfiles/zshrc" }
+  - { dest: "~/.zsh_functions", src: "{{ playbook_dir }}/dotfiles/zsh_functions" }
   - { dest: "~/.ssh", src: "{{ playbook_dir }}/dotfiles/ssh" }
   - { dest: "~/.gnupg", src: "{{ playbook_dir }}/dotfiles/gnupg" }
   - { dest: "~/.gitconfig", src: "{{ playbook_dir }}/dotfiles/gitconfig" }

@@ -1,0 +1,6 @@
+# Usage: disable_gatekeeper <app>
+# Disable Gatekeeper for an app
+
+function disable_gatekeeper() {
+  sudo xattr -rd com.apple.quarantine "$1"
+}

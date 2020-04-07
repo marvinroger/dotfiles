@@ -1,0 +1,10 @@
+# Usage: copy <file>|<variable>
+# Copy the content of a text file or variable to clipboard
+
+function copy() {
+    if test -e "$1"; then
+        pbcopy < "$1"
+    else
+        printf "$1" | pbcopy
+    fi
+}

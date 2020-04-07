@@ -1,0 +1,28 @@
+# Usage: pretty_log <info|success|warning|error> <message>
+# Pretty log messages
+
+function pretty_log() {
+  local red=$(tput setaf 1)
+  local green=$(tput setaf 2)
+  local yellow=$(tput setaf 3)
+  local blue=$(tput setaf 4)
+  local bold=$(tput bold)
+  local normal=$(tput sgr0)
+
+  case $1 in
+    info)
+      printf "${blue}${bold}info ${normal}"
+      ;;
+    success)
+      printf "${green}${bold}success ${normal}"
+      ;;
+    warning)
+      printf "${yellow}${bold}warning ${normal}"
+      ;;
+    error)
+      printf "${red}${bold}error ${normal}"
+      ;;
+  esac
+
+  echo "$2"
+}
