@@ -18,6 +18,7 @@ homebrew_installed_packages:
   - pinentry-mac
   - yubico-piv-tool
   - zsh
+  - antigen
 
 homebrew_cask_apps:
   - google-chrome
