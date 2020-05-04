@@ -19,6 +19,7 @@ homebrew_installed_packages:
   - yubico-piv-tool
   - zsh
   - antigen
+  - topgrade
 
 homebrew_cask_apps:
   - google-chrome
@@ -33,7 +34,6 @@ homebrew_cask_apps:
   - keka
   - vlc
   - postman
-  - tunnelblick
   - nordvpn
   - prefs-editor
 
