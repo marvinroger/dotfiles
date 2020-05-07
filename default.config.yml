@@ -49,12 +49,12 @@ mas_email: ""
 mas_password: ""
 
 dotfiles:
-  - { dest: "~/.zshrc", src: "{{ playbook_dir }}/dotfiles/zshrc" }
-  - { dest: "~/.zsh_functions", src: "{{ playbook_dir }}/dotfiles/zsh_functions" }
-  - { dest: "~/.ssh", src: "{{ playbook_dir }}/dotfiles/ssh" }
-  - { dest: "~/.gnupg", src: "{{ playbook_dir }}/dotfiles/gnupg" }
-  - { dest: "~/.gitconfig", src: "{{ playbook_dir }}/dotfiles/gitconfig" }
-  - { dest: "~/.gitignore_global", src: "{{ playbook_dir }}/dotfiles/gitignore_global" }
-  - { dest: "~/.profile", src: "{{ playbook_dir }}/dotfiles/profile" }
+  - { dest: "~/.zshrc", src: "{{ playbook_dir }}/dotfiles/.zshrc" }
+  - { dest: "~/.zsh_functions", src: "{{ playbook_dir }}/dotfiles/.zsh_functions" }
+  - { dest: "~/.ssh", src: "{{ playbook_dir }}/dotfiles/.ssh" }
+  - { dest: "~/.gnupg", src: "{{ playbook_dir }}/dotfiles/.gnupg" }
+  - { dest: "~/.gitconfig", src: "{{ playbook_dir }}/dotfiles/.gitconfig" }
+  - { dest: "~/.gitignore_global", src: "{{ playbook_dir }}/dotfiles/.gitignore_global" }
+  - { dest: "~/.profile", src: "{{ playbook_dir }}/dotfiles/.profile" }
 
   - { dest: "~/.ssh/id_rsa", src: "{{ playbook_dir }}/secrets/id_rsa" }

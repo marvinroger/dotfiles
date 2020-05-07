@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 fpath+=~/.zsh_functions
 autoload copy disable_gatekeeper github_clone pretty_log \
 time_machine_exclude_deps update yubikey
