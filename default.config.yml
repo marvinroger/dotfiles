@@ -20,6 +20,7 @@ homebrew_installed_packages:
   - zsh
   - antigen
   - topgrade
+  - mosh
 
 homebrew_cask_apps:
   - google-chrome
