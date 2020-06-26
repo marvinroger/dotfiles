@@ -7,6 +7,7 @@ enable_macos_defaults: yes
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-fonts
 
 homebrew_installed_packages:
   - mas
@@ -23,6 +24,7 @@ homebrew_installed_packages:
   - mosh
 
 homebrew_cask_apps:
+  - font-fira-code-nerd-font
   - google-chrome
   - visual-studio-code
   - 1password
@@ -37,6 +39,7 @@ homebrew_cask_apps:
   - postman
   - nordvpn
   - prefs-editor
+  - hey
 
 mas_installed_apps:
   - { id: 937984704, name: "Amphetamine" }
@@ -44,7 +47,6 @@ mas_installed_apps:
   - { id: 462054704, name: "Word" }
   - { id: 462062816, name: "Powerpoint" }
   - { id: 462058435, name: "Excel" }
-  - { id: 1176895641, name: "Spark" }
 # assume we're already logged in
 mas_email: ""
 mas_password: ""
@@ -57,5 +59,6 @@ dotfiles:
   - { dest: "~/.gitconfig", src: "{{ playbook_dir }}/dotfiles/.gitconfig" }
   - { dest: "~/.gitignore_global", src: "{{ playbook_dir }}/dotfiles/.gitignore_global" }
   - { dest: "~/.profile", src: "{{ playbook_dir }}/dotfiles/.profile" }
+  - { dest: "~/.config/starship.toml", src: "{{ playbook_dir }}/dotfiles/.config/starship.toml" }
 
   - { dest: "~/.ssh/id_rsa", src: "{{ playbook_dir }}/secrets/id_rsa" }
