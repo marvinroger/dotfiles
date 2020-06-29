@@ -9,6 +9,7 @@ source /usr/local/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle z
+antigen bundle fzf
 antigen bundle yarn
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search

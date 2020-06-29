@@ -22,6 +22,12 @@ homebrew_installed_packages:
   - antigen
   - topgrade
   - mosh
+  - fzf
+  - bat
+  - httpie
+  - tldr
+  - exa
+  - ripgrep
 
 homebrew_cask_apps:
   - font-fira-code-nerd-font
