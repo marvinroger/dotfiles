@@ -45,7 +45,6 @@ homebrew_cask_apps:
   - postman
   - nordvpn
   - prefs-editor
-  - hey
 
 mas_installed_apps:
   - { id: 937984704, name: "Amphetamine" }
