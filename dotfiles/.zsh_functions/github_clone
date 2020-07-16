@@ -2,7 +2,6 @@
 # Clone a Git project from GitHub
 
 function github_clone {
-  pushd ~/Developer
   git clone "git@github.com:$1.git"
   popd
 }

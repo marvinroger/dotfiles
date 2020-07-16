@@ -28,6 +28,7 @@ homebrew_installed_packages:
   - tldr
   - exa
   - ripgrep
+  - nvm
 
 homebrew_cask_apps:
   - font-fira-code-nerd-font
@@ -47,6 +48,7 @@ homebrew_cask_apps:
   - prefs-editor
   - tomighty
   - kap
+  - stack-stack
 
 mas_installed_apps:
   - { id: 937984704, name: "Amphetamine" }
