@@ -48,3 +48,6 @@ fi
 
 # Init starship
 eval "$(starship init zsh)"
+
+# Init direnv
+eval "$(direnv hook zsh)"
