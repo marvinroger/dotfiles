@@ -1,0 +1,28 @@
+# Usage: switch_eject <sd_card_volume_name>
+# Cleanup script for switch SD card
+
+function switch_eject() {
+  local vol="/Volumes/$1"
+  [ ! -d "${vol}" ] && echo "Wrong volume name or SD card not present" && return 1
+
+  #ask for root pass for next comands
+  sudo echo "Cleaning up sdcard" || return 1
+  # turn off indexing on the specified volume
+  sudo mdutil -i off "${vol}" > /dev/null 2>&1
+  # erase indexing on the specified volume
+  sudo mdutil -E "${vol}" 2> /dev/null | grep -i indexing
+  # remove the spotlight index directory on the specified volume
+  sudo mdutil -X "${vol}"
+  # remove dot and dot underbar files recursively on the specified volume
+  dot_clean -ms "${vol}" > /dev/null 2>&1
+  # remove file system events directory on the specified volume
+  [ -d "${vol}/.fseventsd" ] && rm -rf "${vol}/.fseventsd"
+  # applies correct flags for all directories except Nintendo (as it might mess up installation files)
+  for i in $(printf '%s\n' "${vol}"/** | grep -ivE "nintendo|emutendo"); do
+    [ -d "${i}" ] && echo "Fixing ${i}" && sudo chflags -R arch "${i}" > /dev/null 2>&1
+  done
+
+  echo "Ejecting ${vol}"
+  sudo umount "${vol}"
+  echo "Done"
+}
