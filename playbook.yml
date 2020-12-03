@@ -40,3 +40,6 @@
 
     - name: Kill Finder
       command: killall Finder
+
+    - name: Kill System UI Server
+      command: killall SystemUIServer

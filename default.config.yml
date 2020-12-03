@@ -40,7 +40,6 @@ homebrew_cask_apps:
   - balenaetcher
   - slack
   - spotify
-  - keybase
   - notion
   - keka
   - vlc
@@ -54,9 +53,6 @@ homebrew_cask_apps:
 
 mas_installed_apps:
   - { id: 937984704, name: "Amphetamine" }
-  - { id: 462054704, name: "Word" }
-  - { id: 462062816, name: "Powerpoint" }
-  - { id: 462058435, name: "Excel" }
 # assume we're already logged in
 mas_email: ""
 mas_password: ""

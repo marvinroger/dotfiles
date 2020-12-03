@@ -2,7 +2,7 @@
 # Cleanup script for switch SD card
 
 function switch_eject() {
-  local vol="/Volumes/$1"
+  local vol="$1"
   [ ! -d "${vol}" ] && echo "Wrong volume name or SD card not present" && return 1
 
   #ask for root pass for next comands
