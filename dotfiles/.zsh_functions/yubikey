@@ -4,10 +4,10 @@
 function yubikey() {
   case $1 in
     load)
-      ssh-add -s /usr/local/lib/libykcs11_NOTALINK.dylib
+      ssh-add -s /usr/local/lib/libykcs11.dylib
       ;;
     unload)
-      ssh-add -e /usr/local/lib/libykcs11_NOTALINK.dylib
+      ssh-add -e /usr/local/lib/libykcs11.dylib
       ;;
   esac
 }
