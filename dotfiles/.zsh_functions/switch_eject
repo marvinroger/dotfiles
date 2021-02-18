@@ -3,10 +3,10 @@
 
 function switch_eject() {
   local vol="$1"
-  [ ! -d "${vol}" ] && echo "Wrong volume name or SD card not present" && return 1
+  [ ! -d "${vol}" ] && pretty_log error "Wrong volume name or SD card not present" && return 1
 
   #ask for root pass for next comands
-  sudo echo "Cleaning up sdcard" || return 1
+  pretty_log info "Cleaning up SD card"
   # turn off indexing on the specified volume
   sudo mdutil -i off "${vol}" > /dev/null 2>&1
   # erase indexing on the specified volume
@@ -19,10 +19,11 @@ function switch_eject() {
   [ -d "${vol}/.fseventsd" ] && rm -rf "${vol}/.fseventsd"
   # applies correct flags for all directories except Nintendo (as it might mess up installation files)
   for i in $(printf '%s\n' "${vol}"/** | grep -ivE "nintendo|emutendo"); do
-    [ -d "${i}" ] && echo "Fixing ${i}" && sudo chflags -R arch "${i}" > /dev/null 2>&1
+    [ -d "${i}" ] && pretty_log info "Fixing ${i}" && sudo chflags -R arch "${i}" > /dev/null 2>&1
   done
+  sync
 
-  echo "Ejecting ${vol}"
+  pretty_log info "Ejecting ${vol}"
   sudo umount "${vol}"
-  echo "Done"
+  pretty_log success "Done"
 }

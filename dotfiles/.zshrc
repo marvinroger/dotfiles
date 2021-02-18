@@ -2,7 +2,7 @@
 
 fpath+=~/.zsh_functions
 autoload copy disable_gatekeeper github_clone pretty_log \
-time_machine_exclude_deps update yubikey switch_eject
+time_machine_exclude_deps update yubikey switch_eject switch_split
 
 # Use antigen from homebrew
 source /usr/local/share/antigen/antigen.zsh
