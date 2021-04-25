@@ -9,3 +9,7 @@
 	ff = only
 [gpg]
 	program = gpg
+[init]
+	defaultBranch = main
+[merge]
+	conflictstyle = diff3
