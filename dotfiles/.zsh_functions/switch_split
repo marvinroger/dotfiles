@@ -5,5 +5,5 @@ function switch_split() {
   local file="$1"
   [ ! -f "${file}" ] && pretty_log error "Wrong file" && return 1
 
-  gsplit -b 4294967295 -d -a 1 "$file" splitted.xc
+  gsplit -b 4294934528 -d -a 1 "$file" splitted.xc
 }
