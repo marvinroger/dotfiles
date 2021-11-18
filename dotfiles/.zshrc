@@ -11,7 +11,7 @@ autoload copy disable_gatekeeper github_clone pretty_log \
 time_machine_exclude_deps update switch_eject switch_split
 
 # Use antigen from homebrew
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle z
