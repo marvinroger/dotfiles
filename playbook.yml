@@ -17,10 +17,10 @@
 
 
   roles:
-    - role: geerlingguy.homebrew
+    - role: geerlingguy.mac.homebrew
       when: enable_homebrew
       tags: ['homebrew']
-    - role: geerlingguy.mas
+    - role: geerlingguy.mac.mas
       when: enable_mas
       tags: ['mas']
 

@@ -17,10 +17,8 @@ homebrew_installed_packages:
   - lsusb
   - gnupg
   - pinentry-mac
-  - yubico-piv-tool
   - zsh
   - antigen
-  - topgrade
   - mosh
   - fzf
   - bat
@@ -51,10 +49,13 @@ homebrew_cask_apps:
   - kap
   - stack-stack
   - swish
+  - calibre
+  - mutesync
 
 mas_installed_apps:
   - { id: 937984704, name: "Amphetamine" }
   - { id: 1176895641, name: "Spark" }
+  - { id: 1355679052, name: "Dropover" }
 # assume we're already logged in
 mas_email: ""
 mas_password: ""

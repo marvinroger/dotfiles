@@ -1,8 +1,11 @@
 #!/usr/bin/env zsh
 
+# Fig pre
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+
 fpath+=~/.zsh_functions
 autoload copy disable_gatekeeper github_clone pretty_log \
-time_machine_exclude_deps update yubikey switch_eject switch_split
+time_machine_exclude_deps update switch_eject switch_split
 
 # Use antigen from homebrew
 source /usr/local/share/antigen/antigen.zsh
@@ -51,3 +54,6 @@ eval "$(starship init zsh)"
 
 # Init direnv
 eval "$(direnv hook zsh)"
+
+# Fig post
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
