@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export HOMEBREW_NO_ANALYTICS=1
+
 # Global
 export PATH="/usr/local/sbin:$PATH"
 

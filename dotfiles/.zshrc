@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Fig pre
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
 
