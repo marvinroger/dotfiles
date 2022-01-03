@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+only_macos() {
+  if [[ $OSTYPE != 'darwin'* ]]; then
+    exit
+  fi
+}
+
+close_settings() {
+  osascript -e 'tell application "System Preferences" to quit'
+}
+
+set_defaults() {
+  echo "Setting Dock defaults..."
+  # Disable magnification
+  defaults write com.apple.dock magnification -bool false
+  # Set tile size
+  defaults write com.apple.dock tilesize -int 64
+  # Set dock position
+  defaults write com.apple.dock orientation -string "bottom"
+  # Change minimize/maximize window effect
+  defaults write com.apple.dock mineffect -string "scale"
+  # Minimize windows into their application’s icon
+  defaults write com.apple.dock minimize-to-application -bool true
+  # Enable launch animation
+  defaults write com.apple.dock launchanim -bool true
+  # Automatically hide and show the Dock
+  defaults write com.apple.dock autohide -bool true
+  # Set the autohide delay to 0
+  defaults write com.apple.dock autohide-delay -float 0
+  # Show indicator lights for open applications in the Dock
+  defaults write com.apple.dock show-process-indicators -bool true
+  # Don’t show recent applications in Dock
+  defaults write com.apple.dock show-recents -bool false
+}
+
+restart_apps() {
+  killall Dock
+}
+
+only_macos
+close_settings
+set_defaults
+restart_apps

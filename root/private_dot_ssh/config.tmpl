@@ -1,0 +1,5 @@
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+	IdentityAgent {{ joinPath .chezmoi.homeDir "Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh" }}

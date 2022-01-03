@@ -1,5 +1,0 @@
----
-- name: Install fonts
-  synchronize:
-    src: "{{ playbook_dir }}/assets/fonts"
-    dest: "~/Library/Fonts"

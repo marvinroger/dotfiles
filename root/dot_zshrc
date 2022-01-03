@@ -14,7 +14,6 @@ time_machine_exclude_deps update switch_eject switch_split
 source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
-antigen bundle z
 antigen bundle fzf
 antigen bundle yarn
 antigen bundle zsh-users/zsh-autosuggestions
@@ -57,6 +56,9 @@ eval "$(starship init zsh)"
 
 # Init direnv
 eval "$(direnv hook zsh)"
+
+# Init zoxide
+eval "$(zoxide init zsh)"
 
 # Fig post
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh

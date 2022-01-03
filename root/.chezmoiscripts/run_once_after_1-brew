@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+only_macos() {
+  if [[ $OSTYPE != 'darwin'* ]]; then
+    exit
+  fi
+}
+
+install_homebrew() {
+  if ! command -v brew &> /dev/null; then
+    echo "Installing homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+}
+
+install_packages() {
+  brew bundle --no-lock --file=- <<EOF
+tap "homebrew/core"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+
+brew "git"
+brew "age"
+brew "starship"
+brew "shellcheck"
+brew "diff-so-fancy"
+brew "wget"
+brew "lsusb"
+brew "zsh"
+brew "antigen"
+brew "mosh"
+brew "fzf"
+brew "bat"
+brew "httpie"
+brew "tldr"
+brew "exa"
+brew "ripgrep"
+brew "nvm"
+brew "direnv"
+brew "coreutils"
+
+cask "font-fira-code-nerd-font"
+cask "google-chrome"
+cask "visual-studio-code"
+cask "1password"
+cask "iterm2"
+cask "balenaetcher"
+cask "slack"
+cask "spotify"
+cask "keka"
+cask "vlc"
+cask "postman"
+cask "nordvpn"
+cask "prefs-editor"
+cask "tomighty"
+cask "kap"
+cask "stack-stack"
+cask "swish"
+cask "calibre"
+cask "mutesync"
+cask "secretive"
+
+mas "Amphetamine", id: 937984704
+mas "Spark", id: 1176895641
+mas "Dropover", id: 1355679052
+EOF
+}
+
+only_macos
+install_homebrew
+install_packages

@@ -1,0 +1,20 @@
+[user]
+  name = Marvin ROGER
+  email = marvinroger@users.noreply.github.com
+  signingKey = {{ joinPath .chezmoi.homeDir ".ssh/mbp14-2021.pub" }}
+[core]
+  excludesFile = ~/.gitignore_global
+  ignoreCase = false
+[pull]
+  ff = only
+[init]
+  defaultBranch = main
+[merge]
+  conflictStyle = diff3
+
+[gpg]
+  format = ssh
+[commit]
+  gpgSign = true
+[tag]
+  gpgSign = true
