@@ -13,7 +13,7 @@ if [[ $OSTYPE == 'darwin'* ]]; then
   # Use antigen from homebrew
   source $(brew --prefix)/share/antigen/antigen.zsh
 else
-  source /usr/share/zsh-antigen/antigen.zsh
+  source /opt/antigen.zsh
 fi
 
 # Oh-my-zsh config

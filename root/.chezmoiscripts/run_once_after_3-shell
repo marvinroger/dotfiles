@@ -2,28 +2,24 @@
 
 set -euo pipefail
 
-only_macos() {
-  if [[ $OSTYPE != 'darwin'* ]]; then
-    exit
-  fi
-}
-
-zsh_path="$(brew --prefix)/bin/zsh"
+zsh_path="/usr/bin/zsh"
+if [[ $OSTYPE == 'darwin'* ]]; then
+  zsh_path="$(brew --prefix)/bin/zsh"
+fi
 
 ensure_shell_list() {
   if ! grep -Fxq "$zsh_path" /etc/shells; then
-    echo "Adding homebrew zsh to /etc/shells..."
+    echo "Adding zsh to /etc/shells..."
     echo "$zsh_path" | sudo tee -a /etc/shells
   fi
 }
 
 ensure_user_shell() {
   if [[ $SHELL != "$zsh_path" ]]; then
-    echo "Changing user shell to homebrew zsh..."
-    chsh -s "$zsh_path"
+    echo "Changing user shell to zsh..."
+    sudo chsh -s "$zsh_path"
   fi
 }
 
-only_macos
 ensure_shell_list
 ensure_user_shell

@@ -63,9 +63,13 @@ EOF
 }
 
 linux_install() {
-  apt-get install -y git zsh zsh-antigen shellcheck
+  sudo apt-get install -y git zsh zsh-antigen shellcheck fzf
   # Install starship
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+  # Install antigen
+  sudo curl -o /opt/antigen.zsh -sL git.io/antigen
+  # Install zoxide
+  curl -sS https://webinstall.dev/zoxide | bash
 }
 
 install() {
