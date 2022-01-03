@@ -1,5 +1,8 @@
 Host *
   AddKeysToAgent yes
-  UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
-	IdentityAgent {{ joinPath .chezmoi.homeDir "Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh" }}
+
+  {{- if (eq .chezmoi.os "darwin") }}
+  UseKeychain yes
+  IdentityAgent {{ joinPath .chezmoi.homeDir "Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh" }}
+  {{ end }}

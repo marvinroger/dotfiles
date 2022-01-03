@@ -1,20 +1,23 @@
 #!/usr/bin/env zsh
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Fig pre
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+if [[ $OSTYPE == 'darwin'* ]]; then
+  # Homebrew
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 fpath+=~/.zsh_functions
 autoload copy disable_gatekeeper github_clone pretty_log \
 time_machine_exclude_deps update switch_eject switch_split
 
-# Use antigen from homebrew
-source $(brew --prefix)/share/antigen/antigen.zsh
+if [[ $OSTYPE == 'darwin'* ]]; then
+  # Use antigen from homebrew
+  source $(brew --prefix)/share/antigen/antigen.zsh
+else
+  source /usr/share/zsh-antigen/antigen.zsh
+fi
 
 # Oh-my-zsh config
-export NVM_HOMEBREW=/opt/homebrew
+[[ $OSTYPE == 'darwin'* ]] && export NVM_HOMEBREW=/opt/homebrew
 export NVM_LAZY=1
 export NVM_LAZY_CMD=npx
 
@@ -50,18 +53,14 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Source ~/.profile if it exists
 if test -e "$HOME/.profile"; then
-    source "$HOME/.profile"
+  source "$HOME/.profile"
 fi
 
 # Source ~/.profile_override if it exists
 # .profile_override is not tracked in git
 if test -e "$HOME/.profile_override"; then
-    source "$HOME/.profile_override"
+  source "$HOME/.profile_override"
 fi
 
 # Init starship
 eval "$(starship init zsh)"
-
-
-# Fig post
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh

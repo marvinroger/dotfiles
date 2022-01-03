@@ -2,12 +2,6 @@
 
 set -euo pipefail
 
-only_macos() {
-  if [[ $OSTYPE != 'darwin'* ]]; then
-    exit
-  fi
-}
-
 install_homebrew() {
   if ! command -v brew &> /dev/null; then
     echo "Installing homebrew..."
@@ -15,7 +9,7 @@ install_homebrew() {
   fi
 }
 
-install_packages() {
+brew_install() {
   brew bundle --no-lock --file=- <<EOF
 tap "homebrew/core"
 tap "homebrew/cask"
@@ -68,6 +62,19 @@ mas "Dropover", id: 1355679052
 EOF
 }
 
-only_macos
-install_homebrew
-install_packages
+linux_install() {
+  apt-get install -y git zsh zsh-antigen shellcheck
+  # Install starship
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+}
+
+install() {
+  if [[ $OSTYPE == 'darwin'* ]]; then
+    install_homebrew
+    brew_install
+  else
+    linux_install
+  fi
+}
+
+install
