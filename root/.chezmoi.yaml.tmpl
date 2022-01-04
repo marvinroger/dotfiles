@@ -1,0 +1,14 @@
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+
+sourceDir: {{ .chezmoi.sourceDir | quote }}
+encryption: age
+
+age:
+  identity: {{ joinPath .chezmoi.homeDir "key.txt" | quote }}
+  recipient: age1g4785ke7hya7l30xy2hvuf25ud599qguruvjd8k0n8tumzt6z9xqjqqnh7
+
+diff:
+  pager: diff-so-fancy
+
+data:
+  codespaces: {{ $codespaces }}
