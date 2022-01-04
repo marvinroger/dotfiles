@@ -9,7 +9,7 @@ only_macos() {
 }
 
 add_ssh_key() {
-  SSH_AUTH_SOCK=${APPLE_DEFAULT_SSH_AUTH_SOCK:-$SSH_AUTH_SOCK} ssh-add --apple-use-keychain ~/.ssh/id_rsa
+  ssh-add --apple-use-keychain ~/.ssh/id_rsa
 }
 
 only_macos

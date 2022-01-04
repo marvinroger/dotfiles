@@ -7,8 +7,4 @@ if [[ $OSTYPE == 'darwin'* ]]; then
   # Homebrew
   export HOMEBREW_NO_ANALYTICS=1
   export PATH="$(brew --prefix)/sbin:$PATH"
-
-  # Secretive
-  export APPLE_DEFAULT_SSH_AUTH_SOCK="${APPLE_DEFAULT_SSH_AUTH_SOCK:-$SSH_AUTH_SOCK}"
-  export SSH_AUTH_SOCK="$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
 fi
