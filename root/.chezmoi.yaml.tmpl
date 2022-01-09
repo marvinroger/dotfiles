@@ -1,4 +1,6 @@
-{{- $codespaces:= env "CODESPACES" | not | not -}}
+{{- $codespaces := env "CODESPACES" | not | not -}}
+{{- $machineSerialNumber := index ioreg "IORegistryEntryChildren" 0 "IOPlatformSerialNumber" -}}
+{{- $hashedMachineSerialNumber := printf "%.8s" (sha256sum $machineSerialNumber) -}}
 
 sourceDir: {{ .chezmoi.sourceDir | quote }}
 encryption: age
@@ -12,3 +14,6 @@ diff:
 
 data:
   codespaces: {{ $codespaces }}
+  # Variables are only accessible lowercased, so no camelCase here to avoid confusion
+  machineserialnumber: {{ $machineSerialNumber }}
+  hashedmachineserialnumber: {{ $hashedMachineSerialNumber }}

@@ -1,7 +1,8 @@
 [user]
   name = Marvin ROGER
   email = marvinroger@users.noreply.github.com
-  signingKey = {{ joinPath .chezmoi.homeDir ".ssh/id_rsa.pub" }}
+  # Ignore until https://github.com/github/feedback/discussions/7744 is fixed
+  # signingKey = {{ if (eq .chezmoi.os "darwin") }}{{ joinPath .chezmoi.homeDir (printf ".ssh/mac-%s.pub" .hashedmachineserialnumber) }}{{ else }}{{ joinPath .chezmoi.homeDir ".ssh/id_rsa.pub" }}{{ end }}
 [core]
   excludesFile = ~/.gitignore_global
   ignoreCase = false
@@ -14,6 +15,6 @@
 [gpg]
   format = ssh
 [commit]
-  gpgSign = true
+  # gpgSign = true
 [tag]
-  gpgSign = true
+  # gpgSign = true

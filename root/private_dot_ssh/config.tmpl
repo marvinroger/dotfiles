@@ -1,12 +1,12 @@
-Host github.com
-  IdentityFile ~/.ssh/id_rsa
-  IdentityAgent none
+{{- if (eq .chezmoi.os "darwin") -}}
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
 
+  IdentityFile ~/.ssh/id_rsa
+  IdentityAgent {{ joinPath .chezmoi.homeDir "Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh" }}
+{{- else -}}
 Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
-
-  {{- if (eq .chezmoi.os "darwin") }}
-  UseKeychain yes
-  IdentityAgent {{ joinPath .chezmoi.homeDir "Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh" }}
-  {{ end }}
+{{- end }}
