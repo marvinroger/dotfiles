@@ -4,12 +4,14 @@ set -euo pipefail
 
 only_macos() {
   if [[ $OSTYPE != 'darwin'* ]]; then
+    echo "Not on macOS, skipping"
     exit
   fi
 }
 
 add_ssh_key() {
-  ssh-add --apple-use-keychain ~/.ssh/id_rsa
+  echo "FIXME"
+  # ssh-add --apple-use-keychain ~/.ssh/id_rsa
 }
 
 only_macos

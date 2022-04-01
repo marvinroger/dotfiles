@@ -34,6 +34,8 @@ brew "ripgrep"
 brew "nvm"
 brew "direnv"
 brew "coreutils"
+brew "gnupg"
+brew "pinentry-mac"
 
 cask "font-fira-code-nerd-font"
 cask "google-chrome"
