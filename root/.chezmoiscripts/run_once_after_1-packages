@@ -56,7 +56,6 @@ cask "stack-stack"
 cask "swish"
 cask "calibre"
 cask "mutesync"
-cask "secretive"
 
 mas "Amphetamine", id: 937984704
 mas "Spark", id: 1176895641

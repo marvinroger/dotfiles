@@ -1,12 +1,7 @@
-{{- if (eq .chezmoi.os "darwin") -}}
 Host *
   AddKeysToAgent yes
-  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
 
-  IdentityFile ~/.ssh/id_rsa
-  IdentityAgent {{ joinPath .chezmoi.homeDir "Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh" }}
-{{- else -}}
-Host *
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_rsa
-{{- end }}
+  {{ if (eq .chezmoi.os "darwin") -}}
+  UseKeychain yes
+  {{ end }}
