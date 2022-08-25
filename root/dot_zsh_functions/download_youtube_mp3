@@ -1,0 +1,8 @@
+# Usage: download_youtube_mp3 <youtube_url>
+# Download a high quality MP3 from Youtube
+
+function download_youtube_mp3() {
+  yt-dlp --format "bestaudio/best" --extract-audio --audio-quality 0 --audio-format mp3 \
+    --add-metadata --embed-thumbnail \
+    "$1"
+}

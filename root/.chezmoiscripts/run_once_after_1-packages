@@ -38,6 +38,8 @@ brew "direnv"
 brew "coreutils"
 brew "gnupg"
 brew "pinentry-mac"
+brew "ffmpeg"
+brew "yt-dlp/taps/yt-dlp"
 
 cask "font-fira-code-nerd-font"
 cask "google-chrome"
@@ -57,7 +59,6 @@ cask "kap"
 cask "stack-stack"
 cask "swish"
 cask "calibre"
-cask "mutesync"
 
 mas "Amphetamine", id: 937984704
 mas "Spark", id: 1176895641

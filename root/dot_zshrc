@@ -7,7 +7,8 @@ fi
 
 fpath+=~/.zsh_functions
 autoload copy disable_gatekeeper github_clone pretty_log \
-time_machine_exclude_deps update switch_eject switch_split
+time_machine_exclude_deps update switch_eject switch_split \
+download_youtube_mp3
 
 if [[ $OSTYPE == 'darwin'* ]]; then
   # Use antigen from homebrew
