@@ -1,7 +1,7 @@
 [user]
   name = Marvin ROGER
   email = marvinroger@users.noreply.github.com
-  signingKey = {{ .gpgkeyid }}
+  signingKey = {{ joinPath .chezmoi.homeDir ".ssh/id_ed25519.pub" }}
 [core]
   excludesFile = ~/.gitignore_global
   ignoreCase = false
@@ -13,6 +13,8 @@
   conflictStyle = diff3
 [blame]
   ignoreRevsFile = .git-blame-ignore-revs
+[gpg]
+  format = ssh
 [commit]
   gpgSign = true
 [tag]

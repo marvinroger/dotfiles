@@ -36,8 +36,6 @@ brew "ripgrep"
 brew "nvm"
 brew "direnv"
 brew "coreutils"
-brew "gnupg"
-brew "pinentry-mac"
 brew "ffmpeg"
 brew "yt-dlp/taps/yt-dlp"
 
