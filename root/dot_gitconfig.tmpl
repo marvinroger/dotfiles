@@ -3,7 +3,7 @@
   email = marvinroger@users.noreply.github.com
   signingKey = {{ joinPath .chezmoi.homeDir ".ssh/id_ed25519.pub" }}
 [core]
-  excludesFile = ~/.gitignore_global
+  excludesFile = {{ joinPath .chezmoi.homeDir ".gitignore_global" }}
   ignoreCase = false
 [pull]
   ff = only
@@ -15,6 +15,8 @@
   ignoreRevsFile = .git-blame-ignore-revs
 [gpg]
   format = ssh
+[gpg "ssh"]
+  allowedSignersFile = {{ joinPath .chezmoi.homeDir ".allowed_ssh_signers" }}
 [commit]
   gpgSign = true
 [tag]
