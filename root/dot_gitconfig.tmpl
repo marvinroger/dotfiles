@@ -5,6 +5,8 @@
 [core]
   excludesFile = {{ joinPath .chezmoi.homeDir ".gitignore_global" }}
   ignoreCase = false
+[alias]
+  spring = !"git branch --merged | grep -v -E '^\\s*(^\\*.+|master|main|develop)$' | xargs git branch -d"
 [pull]
   ff = only
 [init]
