@@ -1,0 +1,9 @@
+# Usage: plist_diff <a_path> <b_path>
+# Show diff between two plist
+
+function plist_diff() {
+  local a_xml=$(plutil -convert xml1 -o - "$1")
+  local b_xml=$(plutil -convert xml1 -o - "$2")
+
+  diff -u <(echo "$a_xml") <(echo "$b_xml") | diff-so-fancy
+}
