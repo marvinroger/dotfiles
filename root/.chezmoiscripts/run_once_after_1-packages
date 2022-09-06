@@ -37,6 +37,7 @@ brew "nvm"
 brew "direnv"
 brew "coreutils"
 brew "ffmpeg"
+brew "zoxide"
 brew "yt-dlp/taps/yt-dlp"
 
 cask "font-fira-code-nerd-font"

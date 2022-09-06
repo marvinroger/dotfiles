@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/bin:$PATH"
 
 if [[ $OSTYPE == 'darwin'* ]]; then
   # Homebrew

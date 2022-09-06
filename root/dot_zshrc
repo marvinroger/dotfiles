@@ -18,7 +18,6 @@ else
 fi
 
 # Oh-my-zsh config
-[[ $OSTYPE == 'darwin'* ]] && export NVM_HOMEBREW=/opt/homebrew
 
 antigen use oh-my-zsh
 antigen bundle direnv
