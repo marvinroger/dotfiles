@@ -10,27 +10,21 @@ autoload copy disable_gatekeeper github_clone pretty_log \
 time_machine_exclude_deps update switch_eject switch_split \
 download_youtube_mp3 plist_diff
 
+# Needed for Oh-My-Zsh plugins
+export ZSH_CACHE_DIR="$HOME/.cache"
+mkdir -p "$ZSH_CACHE_DIR/completions"
+autoload -Uz compinit && compinit
+
+# Antidote
+
 if [[ $OSTYPE == 'darwin'* ]]; then
-  # Use antigen from homebrew
-  source $(brew --prefix)/share/antigen/antigen.zsh
+  # Use antidote from homebrew
+  source $(brew --prefix)/share/antidote/antidote.zsh
 else
-  source /opt/antigen.zsh
+  source "${ZDOTDIR:-~}/.antidote/antidote.zsh"
 fi
 
-# Oh-my-zsh config
-
-antigen use oh-my-zsh
-antigen bundle direnv
-antigen bundle zoxide
-antigen bundle nvm
-antigen bundle fzf
-antigen bundle yarn
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-completions
-# Must be last
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen apply
+antidote load
 
 # Setup history-substring-search
 bindkey '^[[A' history-substring-search-up
@@ -62,3 +56,6 @@ fi
 
 # Init starship
 eval "$(starship init zsh)"
+
+# Init fnm
+eval "$(fnm env --use-on-cd)"

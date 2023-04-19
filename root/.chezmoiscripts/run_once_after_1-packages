@@ -25,7 +25,7 @@ brew "diff-so-fancy"
 brew "wget"
 brew "lsusb"
 brew "zsh"
-brew "antigen"
+brew "antidote"
 brew "mosh"
 brew "fzf"
 brew "bat"
@@ -33,7 +33,7 @@ brew "httpie"
 brew "tldr"
 brew "exa"
 brew "ripgrep"
-brew "nvm"
+brew "fnm"
 brew "direnv"
 brew "coreutils"
 brew "ffmpeg"
@@ -61,7 +61,6 @@ cask "stack-stack"
 cask "swish"
 cask "calibre"
 cask "lunar"
-cask "tailscale"
 cask "bartender"
 cask "shottr"
 
@@ -72,11 +71,11 @@ EOF
 }
 
 linux_install() {
-  sudo apt-get install -y git zsh zsh-antigen shellcheck fzf
+  sudo apt-get install -y git zsh shellcheck fzf
   # Install starship
   sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
-  # Install antigen
-  sudo curl -o /opt/antigen.zsh -sL git.io/antigen
+  # Install antidote
+  git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-~}/.antidote"
   # Install zoxide
   curl -sS https://webinstall.dev/zoxide | bash
 }
