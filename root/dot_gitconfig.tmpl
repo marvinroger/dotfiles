@@ -16,6 +16,9 @@
 [gpg]
   format = ssh
 [gpg "ssh"]
+  {{ if (eq .chezmoi.os "darwin") -}}
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  {{ end -}}
   allowedSignersFile = {{ joinPath .chezmoi.homeDir ".allowed_ssh_signers" }}
 [commit]
   gpgSign = true
