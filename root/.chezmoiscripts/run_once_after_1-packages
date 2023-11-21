@@ -14,11 +14,9 @@ brew_install() {
 tap "homebrew/core"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "codenotary/cas"
 
 brew "git"
 brew "age"
-brew "cas"
 brew "starship"
 brew "shellcheck"
 brew "diff-so-fancy"
