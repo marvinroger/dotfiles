@@ -9,10 +9,15 @@
   spring = !"git branch --merged | grep -v -E '^\\s*(^\\*.+|master|main|develop)$' | xargs git branch -d"
 [pull]
   ff = only
+[push]
+  autoSetupRemote = true
 [init]
   defaultBranch = main
 [merge]
-  conflictStyle = diff3
+  conflictStyle = zdiff3
+[diff]
+  algorithm = histogram
+  colorMoved = default
 [gpg]
   format = ssh
 [gpg "ssh"]
