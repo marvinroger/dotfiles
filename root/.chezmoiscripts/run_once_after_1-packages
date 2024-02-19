@@ -39,6 +39,7 @@ brew "zoxide"
 brew "yt-dlp/taps/yt-dlp"
 brew "hadolint"
 brew "cloudflared"
+brew "fwupd"
 
 cask "font-fira-code-nerd-font"
 cask "google-chrome"

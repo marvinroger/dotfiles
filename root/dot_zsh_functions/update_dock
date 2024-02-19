@@ -1,0 +1,13 @@
+# Usage: update_dock
+# Update Dell dock
+
+function update_dock() {
+  pretty_log info "Refreshing metadata..."
+  sudo fwupdtool refresh
+  pretty_log info "Printing updates..."
+  sudo fwupdtool get-updates
+  pretty_log info "Updating..."
+  sudo fwupdtool update
+
+  pretty_log info "Done, disconnect the dock's Thunderbolt cable, and wait 1 minute"
+}

@@ -8,7 +8,7 @@ fi
 fpath+=~/.zsh_functions
 autoload copy disable_gatekeeper github_clone pretty_log \
 time_machine_exclude_deps update switch_eject switch_split \
-download_youtube_mp3 plist_diff
+download_youtube_mp3 plist_diff update_dock
 
 # Needed for Oh-My-Zsh plugins
 export ZSH_CACHE_DIR="$HOME/.cache"
