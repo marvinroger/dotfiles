@@ -11,8 +11,6 @@ install_homebrew() {
 
 brew_install() {
   brew bundle --no-lock --file=- <<EOF
-tap "homebrew/core"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 
 brew "git"
