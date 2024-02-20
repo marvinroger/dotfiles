@@ -12,6 +12,7 @@ install_homebrew() {
 brew_install() {
   brew bundle --no-lock --file=- <<EOF
 tap "homebrew/cask-fonts"
+tap "hashicorp/tap"
 
 brew "git"
 brew "age"
@@ -38,6 +39,7 @@ brew "yt-dlp/taps/yt-dlp"
 brew "hadolint"
 brew "cloudflared"
 brew "fwupd"
+brew "hashicorp/tap/terraform"
 
 cask "font-fira-code-nerd-font"
 cask "google-chrome"
