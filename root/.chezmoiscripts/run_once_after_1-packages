@@ -13,6 +13,7 @@ brew_install() {
   brew bundle --no-lock --file=- <<EOF
 tap "homebrew/cask-fonts"
 tap "hashicorp/tap"
+tap "siderolabs/tap"
 
 brew "git"
 brew "age"
@@ -40,6 +41,8 @@ brew "hadolint"
 brew "cloudflared"
 brew "fwupd"
 brew "hashicorp/tap/terraform"
+brew "talosctl"
+brew "kubernetes-cli"
 
 cask "font-fira-code-nerd-font"
 cask "google-chrome"
