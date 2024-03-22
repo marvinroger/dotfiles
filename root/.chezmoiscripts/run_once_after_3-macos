@@ -35,6 +35,9 @@ set_defaults() {
   defaults write com.apple.dock show-process-indicators -bool true
   # Don’t show recent applications in Dock
   defaults write com.apple.dock show-recents -bool false
+  # Make keyboard more reactive
+  defaults write NSGlobalDomain InitialKeyRepeat -int 15
+  defaults write NSGlobalDomain KeyRepeat -int 2
 }
 
 restart_apps() {
