@@ -39,7 +39,6 @@ brew "cloudflared"
 brew "fwupd"
 brew "hashicorp/tap/terraform"
 brew "kubernetes-cli"
-brew "orbstack"
 
 cask "font-fira-code-nerd-font"
 cask "google-chrome"
@@ -61,9 +60,10 @@ cask "lunar"
 cask "bartender"
 cask "shottr"
 cask "arc"
+cask "orbstack"
 
 mas "Amphetamine", id: 937984704
-mas "Spark", id: 1176895641
+mas "Spark Desktop", id: 6445813049
 mas "Dropover", id: 1355679052
 EOF
 }

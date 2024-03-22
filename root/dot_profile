@@ -3,6 +3,9 @@
 # Rust
 export PATH="$HOME/.cargo/bin:$HOME/bin:$PATH"
 
+# Chezmoi
+export PATH="$HOME/.local/bin:$PATH"
+
 if [[ $OSTYPE == 'darwin'* ]]; then
   # Homebrew
   export HOMEBREW_NO_ANALYTICS=1
