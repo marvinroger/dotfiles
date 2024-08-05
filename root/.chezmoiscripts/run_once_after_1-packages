@@ -65,6 +65,7 @@ cask "orbstack"
 mas "Amphetamine", id: 937984704
 mas "Spark Desktop", id: 6445813049
 mas "Dropover", id: 1355679052
+mas "Dato", id: 1470584107
 EOF
 }
 

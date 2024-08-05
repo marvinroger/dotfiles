@@ -6,6 +6,10 @@ export PATH="$HOME/.cargo/bin:$HOME/bin:$PATH"
 # Chezmoi
 export PATH="$HOME/.local/bin:$PATH"
 
+export SOPS_AGE_KEY_FILE="$HOME/key.txt"
+
+export DO_NOT_TRACK=1
+
 if [[ $OSTYPE == 'darwin'* ]]; then
   # Homebrew
   export HOMEBREW_NO_ANALYTICS=1
