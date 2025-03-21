@@ -60,6 +60,10 @@ set_defaults() {
   defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "TrackpadThreeFingerDrag" '1'
 }
 
+enable_sudo_touch_id() {
+  sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+}
+
 restart_apps() {
   killall Dock
 }
@@ -67,4 +71,5 @@ restart_apps() {
 only_macos
 close_settings
 set_defaults
+enable_sudo_touch_id
 restart_apps
