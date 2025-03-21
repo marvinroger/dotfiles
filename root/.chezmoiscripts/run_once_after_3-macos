@@ -38,6 +38,26 @@ set_defaults() {
   # Make keyboard more reactive
   defaults write NSGlobalDomain InitialKeyRepeat -int 15
   defaults write NSGlobalDomain KeyRepeat -int 2
+
+  # Finder
+  defaults write "com.apple.finder" "ShowExternalHardDrivesOnDesktop" '0'
+  defaults write "com.apple.finder" "ShowRemovableMediaOnDesktop" '0'
+  defaults write "com.apple.finder" "FXPreferredViewStyle" 'Nlsv'
+  defaults write "com.apple.finder" "ShowPathbar" '1'
+  defaults write "com.apple.finder" "NSToolbar Configuration Browser" '{"TB Default Item Identifiers"=("com.apple.finder.BACK","com.apple.finder.SWCH",NSToolbarSpaceItem,"com.apple.finder.ARNG","com.apple.finder.SHAR","com.apple.finder.LABL","com.apple.finder.ACTN",NSToolbarSpaceItem,"com.apple.finder.SRCH",);"TB Display Mode"=2;"TB Icon Size Mode"=1;"TB Is Shown"=1;"TB Item Identifiers"=("com.apple.finder.BACK","com.apple.finder.SWCH",NSToolbarSpaceItem,"com.apple.finder.SHAR",NSToolbarSpaceItem,"com.apple.finder.SRCH",);"TB Size Mode"=1;}'
+  defaults write "com.apple.finder" "FXDefaultSearchScope" 'SCcf'
+  defaults write "com.apple.finder" "NewWindowTarget" 'PfHm'
+
+  defaults write "Apple Global Domain" "AppleShowAllExtensions" '1'
+
+  # Menubar
+  defaults delete "com.apple.Spotlight" "NSStatusItem Visible Item-0" || true
+  defaults write "com.apple.menuextra.clock" "ShowDayOfWeek" '0'
+
+  # Trackpad
+  defaults write "Apple Global Domain" "com.apple.trackpad.scaling" '"1.5"'
+  defaults write "com.apple.AppleMultitouchTrackpad" "TrackpadThreeFingerDrag" '1'
+  defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" "TrackpadThreeFingerDrag" '1'
 }
 
 restart_apps() {

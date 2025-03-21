@@ -3,6 +3,9 @@
 if [[ $OSTYPE == 'darwin'* ]]; then
   # Homebrew
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  fpath+=~/.zsh_functions
+  # Add support homebrew installed completions
+  fpath+="$(brew --prefix)/share/zsh/site-functions"
 fi
 
 fpath+=~/.zsh_functions
