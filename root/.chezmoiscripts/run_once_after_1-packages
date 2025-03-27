@@ -39,6 +39,7 @@ brew "cloudflared"
 brew "fwupd"
 brew "hashicorp/tap/terraform"
 brew "kubernetes-cli"
+brew "hyperfine"
 
 cask "font-fira-code-nerd-font"
 cask "google-chrome"
