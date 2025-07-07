@@ -10,7 +10,7 @@ install_homebrew() {
 }
 
 brew_install() {
-  brew bundle --no-lock --file=- <<EOF
+  brew bundle --file=- <<EOF
 tap "homebrew/cask-fonts"
 tap "hashicorp/tap"
 
