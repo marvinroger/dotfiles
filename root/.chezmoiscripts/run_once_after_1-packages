@@ -39,6 +39,7 @@ brew "fwupd"
 brew "hashicorp/tap/terraform"
 brew "kubernetes-cli"
 brew "hyperfine"
+brew "1password-cli"
 
 cask "font-fira-code-nerd-font"
 cask "google-chrome"
@@ -61,6 +62,8 @@ cask "bartender"
 cask "shottr"
 cask "arc"
 cask "orbstack"
+cask "google-cloud-sdk"
+cask "cursor"
 
 mas "Amphetamine", id: 937984704
 mas "Spark Desktop", id: 6445813049
