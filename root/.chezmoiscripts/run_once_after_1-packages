@@ -12,6 +12,7 @@ install_homebrew() {
 brew_install() {
   brew bundle --file=- <<EOF
 tap "hashicorp/tap"
+tap "anomalyco/tap"
 
 brew "git"
 brew "age"
@@ -64,7 +65,7 @@ cask "bartender"
 cask "shottr"
 cask "arc"
 cask "orbstack"
-cask "google-cloud-sdk"
+cask "gcloud-cli"
 cask "cursor"
 
 mas "Amphetamine", id: 937984704
