@@ -1,4 +1,3 @@
-ohmyzsh/ohmyzsh path:plugins/direnv
 ohmyzsh/ohmyzsh path:plugins/zoxide
 ohmyzsh/ohmyzsh path:plugins/fnm
 ohmyzsh/ohmyzsh path:plugins/fzf

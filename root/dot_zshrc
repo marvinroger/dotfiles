@@ -62,3 +62,6 @@ eval "$(starship init zsh)"
 
 # Init fnm
 eval "$(fnm env --use-on-cd)"
+
+# Init mise
+echo 'eval "$(mise activate bash)"' >> ~/.bashrc

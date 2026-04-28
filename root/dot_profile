@@ -13,6 +13,7 @@ export DO_NOT_TRACK=1
 if [[ $OSTYPE == 'darwin'* ]]; then
   # Homebrew
   export HOMEBREW_NO_ANALYTICS=1
+  export PATH="$(brew --prefix rustup)/bin:$PATH"
   export PATH="$(brew --prefix)/sbin:$PATH"
 
   # Fix mosh, see http://pesin.space/posts/2020-10-05-mosh-macos/
