@@ -66,6 +66,8 @@ cask "arc"
 cask "orbstack"
 cask "gcloud-cli"
 cask "cursor"
+cask "hyperkey"
+cask "loop"
 
 mas "Amphetamine", id: 937984704
 mas "Spark Desktop", id: 6445813049
